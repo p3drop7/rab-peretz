@@ -1,0 +1,85 @@
+//COLORS
+$black: #252525;
+$gray: #686868;
+$dark-blue: #4385C0;
+$blue: #689ECD;
+$light-blue: #8EB7DB;
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    height: 100vh;
+}
+
+.title{
+    height: 10vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav{
+    height: 7vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+
+    a{
+        margin: 0px 2%;
+    }
+}
+
+.title-main{
+    height: 83vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    div{
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div:nth-child(1){
+        div{
+            height: 60%;
+            width: 60%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: flex-start;
+            
+            border: 1px solid red;
+            h2, p{
+                text-align: left;
+            }
+        }
+    }
+
+    div:nth-child(2){
+        background-image: url(../assets/mainpic.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
