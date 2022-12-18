@@ -58,4 +58,66 @@ nav {
     background-repeat: no-repeat; }
 
 section {
-  height: 100vh; }
+  height: 100vh;
+  width: 80%;
+  margin: 0px 10%; }
+
+.works-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center; }
+  .works-container .books-container {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center; }
+    .works-container .books-container div {
+      height: 90%;
+      width: 30%;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: space-around; }
+      .works-container .books-container div div {
+        height: 85%;
+        width: 100%;
+        background-color: aqua; }
+  .works-container .articles-container {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center; }
+    .works-container .articles-container div {
+      height: 90%;
+      width: 30%;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: space-around; }
+      .works-container .articles-container div div {
+        height: 85%;
+        width: 100%;
+        background-color: aqua; }
+  .works-container .colabs-container {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center; }
+    .works-container .colabs-container div {
+      height: 90%;
+      width: 30%;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: space-around; }
+      .works-container .colabs-container div div {
+        height: 85%;
+        width: 100%;
+        background-color: aqua; }
