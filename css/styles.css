@@ -1,8 +1,12 @@
-h1, h2, h3, a {
-  font-family: "Cinzel", serif; }
+h1, h2, h3 {
+  font-family: "Merriweather", serif;
+  font-weight: 300; }
 
 p {
-  font-family: "Fauna One", serif; }
+  font-family: "Frank Ruhl Libre", serif; }
+
+a {
+  font-family: "DM Sans", sans-serif; }
 
 * {
   margin: 0;
@@ -12,28 +16,26 @@ a {
   text-decoration: none; }
 
 html {
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory; }
+  scroll-behavior: smooth; }
 
 header {
   height: 100vh;
-  position: relative;
-  scroll-snap-align: start; }
+  position: relative; }
 
-.title {
+header {
   height: 10vh;
   padding: 0 14vw;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center; }
-  .title a {
+  header a {
     color: #4385C0;
     margin: 0 3px;
     transition: all 0.5s; }
-    .title a i {
+    header a i {
       font-size: 22px; }
-  .title a:hover {
+  header a:hover {
     color: #252525; }
 
 nav {
@@ -42,18 +44,29 @@ nav {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  background-color: #4385C0; }
+  background-color: #4385C0;
+  position: sticky;
+  top: 0px;
+  transition: all 0.5s; }
   nav a {
     margin: 0px 2%;
+    font-size: 15px;
+    font-weight: 700;
     color: white;
     border-width: 0 0 1.5px 0;
     border-style: solid;
-    border-color: #4385C0;
+    border-color: rgba(67, 133, 192, 0);
     transition: all 0.5s; }
   nav a:hover {
     border-color: white; }
 
-.title-main {
+.transparent-nav {
+  background-color: rgba(37, 37, 37, 0.8); }
+
+.transparent-nav-link {
+  border-color: rgba(37, 37, 37, 0); }
+
+.main-section {
   height: 80vh;
   width: 100%;
   padding: 0px 0px;
@@ -61,33 +74,33 @@ nav {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center; }
-  .title-main div {
+  .main-section div {
     height: 90%;
     width: 40%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center; }
-  .title-main div:nth-child(1) div {
+  .main-section div:nth-child(1) div {
     height: 50%;
     width: 80%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start; }
-    .title-main div:nth-child(1) div h2, .title-main div:nth-child(1) div p {
+    .main-section div:nth-child(1) div h2, .main-section div:nth-child(1) div p {
       text-align: left;
       margin: 10px 0px; }
-    .title-main div:nth-child(1) div a {
+    .main-section div:nth-child(1) div a {
       color: #4385C0;
-      font-family: "Fauna One", serif;
+      font-family: "Frank Ruhl Libre", serif;
       border-width: 0 0 1.5px 0;
       border-style: solid;
       border-color: white;
       transition: all 0.5s; }
-    .title-main div:nth-child(1) div a:hover {
+    .main-section div:nth-child(1) div a:hover {
       border-color: #4385C0; }
-  .title-main div:nth-child(2) div {
+  .main-section div:nth-child(2) div {
     height: 500px;
     width: 400px;
     background-image: url(../assets/mainpic.jpg);
@@ -105,8 +118,7 @@ nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  align-items: center;
-  scroll-snap-align: start; }
+  align-items: center; }
   .bio div {
     display: flex;
     flex-flow: column nowrap;
@@ -120,13 +132,12 @@ nav {
 section {
   height: 100vh;
   width: auto;
-  padding: 0px 10vw;
-  scroll-snap-align: start; }
+  padding: 0px 10vw; }
 
 .works-container {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   align-items: center; }
   .works-container .books-container {
     height: 80%;
@@ -191,8 +202,7 @@ footer {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
-  align-items: center;
-  scroll-snap-align: end; }
+  align-items: center; }
   footer div {
     height: 90%;
     width: 100%;
@@ -212,7 +222,9 @@ footer {
       footer div div h3, footer div div p, footer div div a {
         padding: 10px 0px;
         color: #252525;
-        font-family: "Fauna One", serif; }
+        font-family: "DM Sans", sans-serif; }
+      footer div div h3 {
+        font-weight: bolder; }
   footer .copyright {
     width: 100vw;
     height: 10%;
@@ -223,5 +235,8 @@ footer {
     background-color: #252525;
     color: white;
     font-size: 12px; }
+    footer .copyright p {
+      font-family: "DM Sans", sans-serif;
+      font-weight: lighter; }
     footer .copyright a {
       color: white; }
