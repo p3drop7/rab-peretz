@@ -1,3 +1,9 @@
+h1, h2, h3, a {
+  font-family: "Cinzel", serif; }
+
+p {
+  font-family: "Fauna One", serif; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -6,61 +12,115 @@ a {
   text-decoration: none; }
 
 html {
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory; }
 
 header {
-  height: 100vh; }
+  height: 100vh;
+  scroll-snap-align: start; }
 
 .title {
   height: 10vh;
+  padding: 0 14vw;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center; }
+  .title a {
+    color: #4385C0;
+    margin: 0 3px;
+    transition: all 0.5s; }
+    .title a i {
+      font-size: 22px; }
+  .title a:hover {
+    color: #252525; }
 
 nav {
-  height: 7vh;
+  height: 10vh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  background-color: red; }
+  background-color: #4385C0; }
   nav a {
-    margin: 0px 2%; }
+    margin: 0px 2%;
+    color: white;
+    border-width: 0 0 1.5px 0;
+    border-style: solid;
+    border-color: #4385C0;
+    transition: all 0.5s; }
+  nav a:hover {
+    border-color: white; }
 
 .title-main {
-  height: 83vh;
+  height: 80vh;
+  width: 100%;
+  padding: 0px 0px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center; }
   .title-main div {
-    height: 100%;
-    width: 50%;
+    height: 90%;
+    width: 40%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center; }
   .title-main div:nth-child(1) div {
-    height: 60%;
-    width: 60%;
+    height: 50%;
+    width: 80%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: flex-start;
-    border: 1px solid red; }
+    align-items: flex-start; }
     .title-main div:nth-child(1) div h2, .title-main div:nth-child(1) div p {
-      text-align: left; }
-  .title-main div:nth-child(2) {
+      text-align: left;
+      margin: 10px 0px; }
+    .title-main div:nth-child(1) div a {
+      color: #4385C0;
+      font-family: "Fauna One", serif;
+      border-width: 0 0 1.5px 0;
+      border-style: solid;
+      border-color: white;
+      transition: all 0.5s; }
+    .title-main div:nth-child(1) div a:hover {
+      border-color: #4385C0; }
+  .title-main div:nth-child(2) div {
+    height: 500px;
+    width: 400px;
     background-image: url(../assets/mainpic.jpg);
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    border: 5px solid #252525;
+    border-radius: 500px; }
+
+.bio {
+  height: 100vh;
+  width: auto;
+  padding: 0px 10vw;
+  background-color: #8EB7DB;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start; }
+  .bio div {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start; }
+  .bio h2 {
+    margin: 20px 0px; }
+  .bio p {
+    line-height: 150%; }
 
 section {
   height: 100vh;
   width: auto;
-  padding: 0px 10vw; }
+  padding: 0px 10vw;
+  scroll-snap-align: start; }
 
 .works-container {
   display: flex;
@@ -84,7 +144,7 @@ section {
       .works-container .books-container div div {
         height: 85%;
         width: 100%;
-        background-color: aqua; }
+        background-color: #686868; }
   .works-container .articles-container {
     height: 80%;
     width: 100%;
@@ -102,7 +162,7 @@ section {
       .works-container .articles-container div div {
         height: 85%;
         width: 100%;
-        background-color: aqua; }
+        background-color: #686868; }
   .works-container .colabs-container {
     height: 80%;
     width: 100%;
@@ -120,37 +180,47 @@ section {
       .works-container .colabs-container div div {
         height: 85%;
         width: 100%;
-        background-color: aqua; }
+        background-color: #686868; }
 
 footer {
   height: 100vh;
   width: auto;
   padding: 0px 10vw;
+  background-color: #4385C0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
-  align-items: center; }
+  align-items: center;
+  scroll-snap-align: end; }
   footer div {
     height: 90%;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
-    align-items: space-evenly; }
+    justify-content: space-around;
+    align-items: center; }
     footer div div {
       height: 100%;
-      width: 50%;
+      width: 40%;
       display: flex;
       flex-flow: column nowrap;
       justify-content: center;
-      align-items: center;
-      text-align: center; }
+      align-items: flex-start; }
+      footer div div i {
+        color: white; }
       footer div div h3, footer div div p, footer div div a {
-        padding: 10px 0px; }
+        padding: 10px 0px;
+        color: #252525;
+        font-family: "Fauna One", serif; }
   footer .copyright {
-    width: 100%;
+    width: 100vw;
     height: 10%;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    background-color: #252525;
+    color: white;
+    font-size: 12px; }
+    footer .copyright a {
+      color: white; }
