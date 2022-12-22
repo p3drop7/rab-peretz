@@ -38,6 +38,12 @@ header {
   header a:hover {
     color: #252525; }
 
+.nav-display-button {
+  display: none; }
+
+.nav-close-button {
+  display: none; }
+
 nav {
   height: 10vh;
   display: flex;
@@ -218,7 +224,8 @@ footer {
       justify-content: center;
       align-items: flex-start; }
       footer div div i {
-        color: white; }
+        color: white;
+        margin-right: 5px; }
       footer div div h3, footer div div p, footer div div a {
         padding: 10px 0px;
         color: #252525;
@@ -240,3 +247,127 @@ footer {
       font-weight: lighter; }
     footer .copyright a {
       color: white; }
+
+@media (max-width: 998px) and (min-width: 768px) {
+  header {
+    padding: 0px;
+    justify-content: space-evenly; }
+  section {
+    padding: 0px 5vw; }
+  .main-section {
+    padding: 0px; }
+    .main-section div {
+      width: 50%; }
+    .main-section div:nth-child(2) div {
+      height: 330px;
+      width: 330px; }
+  .bio {
+    padding: 0px 5vw; }
+  .works-container {
+    padding-top: 25px;
+    justify-content: center; }
+    .works-container .books-container {
+      height: 60%; }
+    .works-container .articles-container {
+      height: 60%; }
+    .works-container .colabs-container {
+      height: 60%; }
+  footer div div h3 {
+    font-size: 1rem; }
+  footer div div a, footer div div p {
+    font-size: 0.8rem; } }
+
+@media (max-width: 768PX) {
+  header {
+    height: 20vh;
+    padding: 0px 15px;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start; }
+    header h1 {
+      font-size: 2rem; }
+    header div a i {
+      margin-right: 10px;
+      font-size: 2.3em; }
+  .nav-display-button {
+    height: 0px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: sticky;
+    top: 50px; }
+    .nav-display-button div {
+      height: 80px;
+      width: 80px;
+      border-radius: 50px;
+      background-color: #4385C0;
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center; }
+      .nav-display-button div i {
+        font-size: 230%;
+        color: white; }
+  nav {
+    height: 100vh;
+    width: 100%;
+    padding: 50px 20px;
+    position: fixed;
+    left: 100%;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: all 1s; }
+    nav a {
+      font-size: 1.8rem;
+      margin: 18px 0px; }
+    nav .nav-close-button {
+      color: white;
+      font-size: 2.3rem;
+      display: inline-block;
+      position: relative;
+      left: 80%; }
+  .nav-visible {
+    left: 0%; }
+  .main-section {
+    padding: 0px;
+    flex-flow: column-reverse nowrap; }
+    .main-section div {
+      width: 100%; }
+  section.main-section div:nth-child(1) {
+    height: 45%; }
+  section.main-section div:nth-child(2) {
+    height: 55%; }
+    section.main-section div:nth-child(2) div {
+      height: 100%;
+      width: 100%;
+      border-radius: 0px;
+      border: none; }
+  .bio {
+    padding: 0px 15px; }
+  .works-container {
+    padding-top: 25px;
+    justify-content: center; }
+    .works-container .books-container {
+      height: 60%; }
+    .works-container .articles-container {
+      height: 60%; }
+    .works-container .colabs-container {
+      height: 60%; }
+  footer {
+    padding: 0px;
+    justify-content: space-around; }
+    footer div {
+      flex-flow: column nowrap;
+      justify-content: center; }
+      footer div div {
+        width: 100%;
+        height: auto;
+        margin: 50px 0px;
+        align-items: center; }
+        footer div div h3 {
+          text-align: center; }
+        footer div div a, footer div div p {
+          padding: 15px 0px; } }

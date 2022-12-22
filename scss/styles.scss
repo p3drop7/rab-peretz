@@ -103,6 +103,14 @@ header{
     }
 }
 
+.nav-display-button{
+    display: none;
+}
+
+.nav-close-button {
+    display: none;
+}
+
 nav{
     height: 10vh;
     display: flex;
@@ -296,12 +304,14 @@ footer{
 
             i{
                 color: white;
+                margin-right: 5px;
             }
 
             h3, p, a {
                 padding: 10px 0px;
                 color: $black;
                 font-family: $dmsans;
+                
             }
 
             h3{
@@ -328,6 +338,222 @@ footer{
 
         a{
             color: white;
+        }
+    }
+}
+
+// RESPONSIVE DESIGN FOR SMALL LAPTOPS AND TABLETS
+@media (max-width: 998px) and (min-width: 768px){
+
+    header{
+        padding: 0px;
+        justify-content: space-evenly;
+    }
+
+    section{
+        padding: 0px 5vw;
+    }
+
+    .main-section{
+        padding: 0px;
+
+        div{
+            width: 50%;
+        }
+
+        div:nth-child(2) div{
+            height: 330px;
+            width: 330px;
+        }
+    }
+
+    .bio{
+        padding: 0px 5vw;
+    }
+
+    .works-container{
+        padding-top: 25px;
+        justify-content: center;
+
+        .books-container{
+            height: 60%;
+        }
+
+        .articles-container{
+            height: 60%;
+        }
+        
+        .colabs-container{
+            height: 60%;
+        }
+    }
+    
+    footer{
+        div{
+            div{
+                h3{
+                    font-size: 1rem;
+                }
+                a, p{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+// RESPONSIVE DESIGN FOR SMARTPHONES
+@media (max-width: 768PX){
+
+    header{
+        height: 20vh;
+        padding: 0px 15px;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+
+        h1{
+            font-size: 2rem;
+        }
+
+        div a i{
+            margin-right: 10px;
+            font-size: 2.3em;
+        }
+    }
+
+    .nav-display-button{
+        height: 0px;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        position: sticky;
+        top: 50px;
+
+        div{
+            height: 80px;
+            width: 80px;
+            border-radius: 50px;
+            background-color: $dark-blue;
+            display: flex;
+            flex-flow: row;
+            justify-content: center;
+            align-items: center;
+            
+            i{
+                font-size: 230%;
+                color: white;
+            }
+        }
+        
+    }
+
+    nav{
+        height: 100vh;
+        width: 100%;
+        padding: 50px 20px;
+        position: fixed;
+        left: 100%;
+
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        transition: all 1s;
+
+        a{
+            font-size: 1.8rem;
+            margin: 18px 0px;
+        }
+
+        .nav-close-button{
+            color: white;
+            font-size: 2.3rem;
+            display: inline-block;
+            position: relative;
+            left: 80%;
+        }
+    }
+
+    .nav-visible{
+        left: 0%;
+    }
+
+    .main-section{
+        padding: 0px;
+        flex-flow: column-reverse nowrap;
+
+        div{
+            width: 100%;
+        }
+    }
+
+    section.main-section div:nth-child(1){
+        height: 45%;
+    }
+
+    section.main-section div:nth-child(2){
+        height: 55%;
+
+        div{
+            height: 100%;
+            width: 100%;
+            border-radius: 0px;
+            border: none;
+        }
+    }
+
+    .bio{
+        padding: 0px 15px;
+    }
+
+    .works-container{
+        padding-top: 25px;
+        justify-content: center;
+
+        .books-container{
+            height: 60%;
+        }
+
+        .articles-container{
+            height: 60%;
+        }
+        
+        .colabs-container{
+            height: 60%;
+        }
+    }
+    
+    footer{
+        padding: 0px;
+        justify-content: space-around;
+
+        div{
+            flex-flow: column nowrap;
+            justify-content: center;
+
+            div{
+                width: 100%;
+                height: auto;
+                margin: 50px 0px;
+                align-items: center;
+
+                h3{
+                    // font-size: 1.5rem;
+                    text-align: center;
+                }
+
+                a, p{
+                    // font-size: 1.3rem;
+                    padding: 15px 0px;
+                }
+
+                p i{
+                    // font-size: 1rem;
+                }
+            }
         }
     }
 }
