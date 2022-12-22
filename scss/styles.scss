@@ -339,6 +339,13 @@ footer{
         a{
             color: white;
         }
+
+        a:hover{
+            span{
+                color: aquamarine;
+                transition: all 0.5s;
+            }
+        }
     }
 }
 
@@ -456,12 +463,11 @@ footer{
         padding: 50px 20px;
         position: fixed;
         left: 100%;
+        background-color: $black-semi-transparent;
 
         flex-flow: column nowrap;
         justify-content: flex-start;
         align-items: flex-start;
-
-        transition: all 1s;
 
         a{
             font-size: 1.8rem;
@@ -541,17 +547,11 @@ footer{
                 align-items: center;
 
                 h3{
-                    // font-size: 1.5rem;
                     text-align: center;
                 }
 
                 a, p{
-                    // font-size: 1.3rem;
                     padding: 15px 0px;
-                }
-
-                p i{
-                    // font-size: 1rem;
                 }
             }
         }

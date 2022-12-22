@@ -247,6 +247,9 @@ footer {
       font-weight: lighter; }
     footer .copyright a {
       color: white; }
+    footer .copyright a:hover span {
+      color: aquamarine;
+      transition: all 0.5s; }
 
 @media (max-width: 998px) and (min-width: 768px) {
   header {
@@ -316,10 +319,10 @@ footer {
     padding: 50px 20px;
     position: fixed;
     left: 100%;
+    background-color: rgba(37, 37, 37, 0.8);
     flex-flow: column nowrap;
     justify-content: flex-start;
-    align-items: flex-start;
-    transition: all 1s; }
+    align-items: flex-start; }
     nav a {
       font-size: 1.8rem;
       margin: 18px 0px; }

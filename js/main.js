@@ -2,6 +2,7 @@ const navbar = document.querySelector('nav');
 const navbarLink = document.querySelectorAll('.nav-link-selector')
 const navExpandButton = document.querySelector('#nav-display-button')
 const navCloseButton = document.querySelector('#nav-close-button')
+const navLinks = document.querySelectorAll('nav a')
 
 window.addEventListener('scroll', () => {
     if(screen.width > 769){
@@ -29,4 +30,10 @@ navExpandButton.addEventListener('click', ()=>{
 
 navCloseButton.addEventListener('click', ()=> {
     navbar.classList.remove('nav-visible')
+})
+
+navLinks.forEach(item => {
+    item.addEventListener('click', ()=>{
+        navbar.classList.remove('nav-visible')
+    })
 })
