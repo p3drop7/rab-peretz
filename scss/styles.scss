@@ -153,6 +153,7 @@ nav{
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     div{
         height: 90%;
@@ -192,14 +193,17 @@ nav{
 
     div:nth-child(2){
         div{
-            height: 500px;
-            width: 400px;
+            height: 380px;
+            min-height: 380px;
+            width: 380px;
+            min-width: 380px;
             background-image: url(../assets/mainpic.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             border: 5px solid $black;
             border-radius: 500px;
+            overflow: hidden;
         }
     }
 }
@@ -370,7 +374,9 @@ footer{
 
         div:nth-child(2) div{
             height: 330px;
+            min-height: 330px;
             width: 330px;
+            min-width: 330px;
         }
     }
 
@@ -498,10 +504,22 @@ footer{
 
     section.main-section div:nth-child(1){
         height: 45%;
+        width: 95%;
+
+        div {
+            h2{
+                font-size: 110%;
+                margin: 1px;
+            }
+            p{
+                margin: 5px;
+            }
+        }
     }
 
     section.main-section div:nth-child(2){
         height: 55%;
+        overflow: hidden;
 
         div{
             height: 100%;
@@ -516,19 +534,20 @@ footer{
     }
 
     .works-container{
+        height: 80vh;
         padding-top: 25px;
         justify-content: center;
 
         .books-container{
-            height: 60%;
+            height: 90%;
         }
 
         .articles-container{
-            height: 60%;
+            height: 90%;
         }
         
         .colabs-container{
-            height: 60%;
+            height: 90%;
         }
     }
     

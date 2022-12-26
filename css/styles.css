@@ -79,7 +79,8 @@ nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  overflow: hidden; }
   .main-section div {
     height: 90%;
     width: 40%;
@@ -107,14 +108,17 @@ nav {
     .main-section div:nth-child(1) div a:hover {
       border-color: #4385C0; }
   .main-section div:nth-child(2) div {
-    height: 500px;
-    width: 400px;
+    height: 380px;
+    min-height: 380px;
+    width: 380px;
+    min-width: 380px;
     background-image: url(../assets/mainpic.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border: 5px solid #252525;
-    border-radius: 500px; }
+    border-radius: 500px;
+    overflow: hidden; }
 
 .bio {
   height: 100vh;
@@ -263,7 +267,9 @@ footer {
       width: 50%; }
     .main-section div:nth-child(2) div {
       height: 330px;
-      width: 330px; }
+      min-height: 330px;
+      width: 330px;
+      min-width: 330px; }
   .bio {
     padding: 0px 5vw; }
   .works-container {
@@ -340,9 +346,16 @@ footer {
     .main-section div {
       width: 100%; }
   section.main-section div:nth-child(1) {
-    height: 45%; }
+    height: 45%;
+    width: 95%; }
+    section.main-section div:nth-child(1) div h2 {
+      font-size: 110%;
+      margin: 1px; }
+    section.main-section div:nth-child(1) div p {
+      margin: 5px; }
   section.main-section div:nth-child(2) {
-    height: 55%; }
+    height: 55%;
+    overflow: hidden; }
     section.main-section div:nth-child(2) div {
       height: 100%;
       width: 100%;
@@ -351,14 +364,15 @@ footer {
   .bio {
     padding: 0px 15px; }
   .works-container {
+    height: 80vh;
     padding-top: 25px;
     justify-content: center; }
     .works-container .books-container {
-      height: 60%; }
+      height: 90%; }
     .works-container .articles-container {
-      height: 60%; }
+      height: 90%; }
     .works-container .colabs-container {
-      height: 60%; }
+      height: 90%; }
   footer {
     padding: 0px;
     justify-content: space-around; }
