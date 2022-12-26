@@ -1,4 +1,4 @@
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
   font-family: "Merriweather", serif;
   font-weight: 300; }
 
@@ -167,6 +167,8 @@ section {
         height: 85%;
         width: 100%;
         background-color: #686868; }
+  .works-container .books-container--mobile {
+    display: none; }
   .works-container .articles-container {
     height: 80%;
     width: 100%;
@@ -306,7 +308,8 @@ footer {
     justify-content: flex-end;
     align-items: center;
     position: sticky;
-    top: 50px; }
+    top: 50px;
+    z-index: 100; }
     .nav-display-button div {
       height: 80px;
       width: 80px;
@@ -364,11 +367,36 @@ footer {
   .bio {
     padding: 0px 15px; }
   .works-container {
-    height: 80vh;
     padding-top: 25px;
     justify-content: center; }
     .works-container .books-container {
-      height: 90%; }
+      display: none; }
+    .works-container .books-container--mobile {
+      display: block;
+      height: 90%;
+      width: 100vw; }
+      .works-container .books-container--mobile .carousel-inner {
+        height: 100%; }
+        .works-container .books-container--mobile .carousel-inner .carousel-item {
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat; }
+          .works-container .books-container--mobile .carousel-inner .carousel-item .carousel-caption {
+            padding: 2rem 30px;
+            width: 100vw;
+            height: auto;
+            right: 0px;
+            left: 0px;
+            bottom: 0px;
+            background-color: rgba(37, 37, 37, 0.6);
+            background-image: none !important; }
+        .works-container .books-container--mobile .carousel-inner div.carousel-item:nth-child(1) {
+          background-image: url("../assets/book1.webp"); }
+        .works-container .books-container--mobile .carousel-inner div.carousel-item:nth-child(2) {
+          background-image: url("../assets/book2.jpg"); }
+        .works-container .books-container--mobile .carousel-inner div.carousel-item:nth-child(3) {
+          background-image: url("../assets/book3.jpg"); }
     .works-container .articles-container {
       height: 90%; }
     .works-container .colabs-container {

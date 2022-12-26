@@ -50,7 +50,7 @@ $dmsans: 'DM Sans', sans-serif;
     border-color: $color;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
     font-family: $merri;
     font-weight: 300;
 }
@@ -257,6 +257,10 @@ section{
         }
     }
 
+    .books-container--mobile{
+        display: none
+    }
+
     .articles-container{
         @include cards-containers-responsive;
 
@@ -268,6 +272,10 @@ section{
         }
     }
 
+    // .books-container--mobile{
+    //     display: none
+    // }
+
     .colabs-container{
         @include cards-containers-responsive;
 
@@ -278,6 +286,10 @@ section{
             }
         }
     }
+
+    // .books-container--mobile{
+    //     display: none
+    // }
 }
 
 footer{
@@ -444,6 +456,7 @@ footer{
         align-items: center;
         position: sticky;
         top: 50px;
+        z-index: 100;
 
         div{
             height: 80px;
@@ -534,12 +547,51 @@ footer{
     }
 
     .works-container{
-        height: 80vh;
         padding-top: 25px;
         justify-content: center;
 
         .books-container{
+            display: none;
+        }
+
+        .books-container--mobile{
+            display: block;
             height: 90%;
+            width: 100vw;
+
+            .carousel-inner{
+                height: 100%;
+
+                .carousel-item{
+                    height: 100%;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+
+                    .carousel-caption{
+                        padding: 2rem 30px;
+                        width: 100vw;
+                        height: auto;
+                        right: 0px;
+                        left: 0px;
+                        bottom: 0px;
+                        background-color: rgba(37, 37, 37, 0.6);
+                        background-image: none !important;
+                    }
+                }
+
+                div.carousel-item:nth-child(1){
+                    background-image: url('../assets/book1.webp');
+                }
+            
+                div.carousel-item:nth-child(2){
+                    background-image: url('../assets/book2.jpg');
+                }
+    
+                div.carousel-item:nth-child(3){
+                    background-image: url('../assets/book3.jpg');
+                }
+            }   
         }
 
         .articles-container{
