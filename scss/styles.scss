@@ -36,7 +36,9 @@ $dmsans: 'DM Sans', sans-serif;
 @mixin card-image-responsive{
     height: 85%;
     width: 100%;
-    background-color: $gray;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 @mixin link-animation-transition ($color){
@@ -54,6 +56,12 @@ h1, h2, h3, h4, h5 {
     font-family: $merri;
     font-weight: 300;
 }
+
+h1{ font-size: 2rem; }
+h2{ font-size: 1.4rem; }
+h3{ font-size: 1.2rem; }
+h4{ font-size: 1.2rem; }
+h5{ font-size: 1.1rem; }
 
 p {
     font-family: $frank;
@@ -255,6 +263,11 @@ section{
                 @include card-image-responsive;
             }
         }
+
+        div:nth-child(1) div{ background-image: url('../assets/book1.webp'); }
+        div:nth-child(2) div{ background-image: url('../assets/book2.jpg'); }
+        div:nth-child(3) div{ background-image: url('../assets/book3.jpg'); }
+        
     }
 
     .books-container--mobile{
@@ -270,14 +283,15 @@ section{
                 @include card-image-responsive;
             }
         }
-    }
 
-    // .books-container--mobile{
-    //     display: none
-    // }
+        div:nth-child(1) div{ background-image: url('../assets/book1.webp'); }
+        div:nth-child(2) div{ background-image: url('../assets/book2.jpg'); }
+        div:nth-child(3) div{ background-image: url('../assets/book3.jpg'); }
+    }
 
     .colabs-container{
         @include cards-containers-responsive;
+        padding-bottom: 40px;
 
         div {
             @include card-responsive;
@@ -285,11 +299,11 @@ section{
                 @include card-image-responsive;
             }
         }
-    }
 
-    // .books-container--mobile{
-    //     display: none
-    // }
+        div:nth-child(1) div{ background-image: url('../assets/book1.webp'); }
+        div:nth-child(2) div{ background-image: url('../assets/book2.jpg'); }
+        div:nth-child(3) div{ background-image: url('../assets/book3.jpg'); }
+    }
 }
 
 footer{
@@ -482,6 +496,7 @@ footer{
         padding: 50px 20px;
         position: fixed;
         left: 100%;
+        z-index: 1000;
         background-color: $black-semi-transparent;
 
         flex-flow: column nowrap;
@@ -550,15 +565,11 @@ footer{
         padding-top: 25px;
         justify-content: center;
 
-        .books-container{
-            display: none;
-        }
+        .books-container { display: none; }
+        .articles-container { display: none; }
+        .colabs-container { display: none; }
 
-        .books-container--mobile{
-            display: block;
-            height: 90%;
-            width: 100vw;
-
+        @mixin carousel-inner-item-caption{
             .carousel-inner{
                 height: 100%;
 
@@ -579,7 +590,18 @@ footer{
                         background-image: none !important;
                     }
                 }
+            }
+        }
 
+        @include carousel-inner-item-caption();
+
+        .books-container--mobile{
+            display: block;
+            height: 90%;
+            width: 100vw;
+            @include carousel-inner-item-caption();
+
+            .carousel-inner{
                 div.carousel-item:nth-child(1){
                     background-image: url('../assets/book1.webp');
                 }
@@ -594,17 +616,52 @@ footer{
             }   
         }
 
-        .articles-container{
+        .articles-container--mobile{
+            display: block;
             height: 90%;
+            width: 100vw;
+            @include carousel-inner-item-caption();
+
+            .carousel-inner{
+                div.carousel-item:nth-child(1){
+                    background-image: url('../assets/book1.webp');
+                }
+            
+                div.carousel-item:nth-child(2){
+                    background-image: url('../assets/book2.jpg');
+                }
+    
+                div.carousel-item:nth-child(3){
+                    background-image: url('../assets/book3.jpg');
+                }
+            }   
         }
-        
-        .colabs-container{
+
+        .colabs-container--mobile{
+            display: block;
             height: 90%;
+            width: 100vw;
+            margin-bottom: 50px;
+            @include carousel-inner-item-caption();
+
+            .carousel-inner{
+                div.carousel-item:nth-child(1){
+                    background-image: url('../assets/book1.webp');
+                }
+            
+                div.carousel-item:nth-child(2){
+                    background-image: url('../assets/book2.jpg');
+                }
+    
+                div.carousel-item:nth-child(3){
+                    background-image: url('../assets/book3.jpg');
+                }
+            }   
         }
     }
     
     footer{
-        padding: 0px;
+        padding: 0px 5px;
         justify-content: space-around;
 
         div{
@@ -616,13 +673,15 @@ footer{
                 height: auto;
                 margin: 50px 0px;
                 align-items: center;
+                justify-content: center;
 
                 h3{
                     text-align: center;
+                    padding: 10px 0px;
                 }
 
                 a, p{
-                    padding: 15px 0px;
+                    padding: 5px 0px;
                 }
             }
         }

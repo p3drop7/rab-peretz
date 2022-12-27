@@ -36,4 +36,4 @@ navLinks.forEach(item => {
     item.addEventListener('click', ()=>{
         navbar.classList.remove('nav-visible')
     })
-})
+});
