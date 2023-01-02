@@ -31,6 +31,12 @@ $dmsans: 'DM Sans', sans-serif;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-around;
+    
+    h3{
+        height: 15%;
+        margin-top: 10px;
+        text-align: center;
+    }
 }
 
 @mixin card-image-responsive{
@@ -181,9 +187,10 @@ nav{
             justify-content: center;
             align-items: flex-start;
 
-            h2, p{
+            h3, p{
                 text-align: left;
                 margin: 10px 0px;
+                line-height: 1.4;
             }
 
             a{
@@ -264,9 +271,9 @@ section{
             }
         }
 
-        div:nth-child(1) div{ background-image: url('../assets/book1.webp'); }
-        div:nth-child(2) div{ background-image: url('../assets/book2.jpg'); }
-        div:nth-child(3) div{ background-image: url('../assets/book3.jpg'); }
+        div:nth-child(1) div{ background-image: url('../assets/ester.jpeg'); }
+        div:nth-child(2) div{ background-image: url('../assets/entreloprofano.jpeg'); }
+        div:nth-child(3) div{ background-image: url('../assets/palabrasdepaz.jpeg'); }
         
     }
 
@@ -603,15 +610,15 @@ footer{
 
             .carousel-inner{
                 div.carousel-item:nth-child(1){
-                    background-image: url('../assets/book1.webp');
+                    background-image: url('../assets/ester.jpeg');
                 }
             
                 div.carousel-item:nth-child(2){
-                    background-image: url('../assets/book2.jpg');
+                    background-image: url('../assets/entreloprofano.jpeg');
                 }
     
                 div.carousel-item:nth-child(3){
-                    background-image: url('../assets/book3.jpg');
+                    background-image: url('../assets/palabrasdepaz.jpeg');
                 }
             }   
         }

@@ -110,9 +110,10 @@ nav {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start; }
-    .main-section div:nth-child(1) div h2, .main-section div:nth-child(1) div p {
+    .main-section div:nth-child(1) div h3, .main-section div:nth-child(1) div p {
       text-align: left;
-      margin: 10px 0px; }
+      margin: 10px 0px;
+      line-height: 1.4; }
     .main-section div:nth-child(1) div a {
       color: #4385C0;
       font-family: "Frank Ruhl Libre", serif;
@@ -178,6 +179,10 @@ section {
       flex-flow: column nowrap;
       align-items: center;
       justify-content: space-around; }
+      .works-container .books-container div h3 {
+        height: 15%;
+        margin-top: 10px;
+        text-align: center; }
       .works-container .books-container div div {
         height: 85%;
         width: 100%;
@@ -185,11 +190,11 @@ section {
         background-size: cover;
         background-repeat: no-repeat; }
     .works-container .books-container div:nth-child(1) div {
-      background-image: url("../assets/book1.webp"); }
+      background-image: url("../assets/ester.jpeg"); }
     .works-container .books-container div:nth-child(2) div {
-      background-image: url("../assets/book2.jpg"); }
+      background-image: url("../assets/entreloprofano.jpeg"); }
     .works-container .books-container div:nth-child(3) div {
-      background-image: url("../assets/book3.jpg"); }
+      background-image: url("../assets/palabrasdepaz.jpeg"); }
   .works-container .books-container--mobile {
     display: none; }
   .works-container .articles-container {
@@ -206,6 +211,10 @@ section {
       flex-flow: column nowrap;
       align-items: center;
       justify-content: space-around; }
+      .works-container .articles-container div h3 {
+        height: 15%;
+        margin-top: 10px;
+        text-align: center; }
       .works-container .articles-container div div {
         height: 85%;
         width: 100%;
@@ -233,6 +242,10 @@ section {
       flex-flow: column nowrap;
       align-items: center;
       justify-content: space-around; }
+      .works-container .colabs-container div h3 {
+        height: 15%;
+        margin-top: 10px;
+        text-align: center; }
       .works-container .colabs-container div div {
         height: 85%;
         width: 100%;
@@ -453,11 +466,11 @@ footer {
             background-color: rgba(37, 37, 37, 0.6);
             background-image: none !important; }
       .works-container .books-container--mobile .carousel-inner div.carousel-item:nth-child(1) {
-        background-image: url("../assets/book1.webp"); }
+        background-image: url("../assets/ester.jpeg"); }
       .works-container .books-container--mobile .carousel-inner div.carousel-item:nth-child(2) {
-        background-image: url("../assets/book2.jpg"); }
+        background-image: url("../assets/entreloprofano.jpeg"); }
       .works-container .books-container--mobile .carousel-inner div.carousel-item:nth-child(3) {
-        background-image: url("../assets/book3.jpg"); }
+        background-image: url("../assets/palabrasdepaz.jpeg"); }
     .works-container .articles-container--mobile {
       display: block;
       height: 90%;
