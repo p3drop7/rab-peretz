@@ -8,9 +8,11 @@ $light-background: rgb(233, 238, 242);
 $dark-blue-transparent: rgba(67, 133, 192, 0.0);
 $black-transparent: rgba(37, 37, 37, 0.0);
 $black-semi-transparent: rgba(37, 37, 37, 0.8);
+$black-less-transparent: rgba(37, 37, 37, 0.9);
 
 //FONTS
 $merri: 'Merriweather', serif;
+$merri-sans: 'Merriweather Sans', sans-serif;
 $frank: 'Frank Ruhl Libre', serif;
 $dmsans: 'DM Sans', sans-serif;
 
@@ -25,7 +27,7 @@ $dmsans: 'DM Sans', sans-serif;
 }
 
 @mixin card-responsive{
-    height: 90%;
+    height: 100%;
     width: 30%;
     display: flex;
     flex-flow: column nowrap;
@@ -47,6 +49,114 @@ $dmsans: 'DM Sans', sans-serif;
     background-repeat: no-repeat;
 }
 
+@mixin work-comment{
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background-color: $black-less-transparent;
+    color: white;
+    cursor: pointer;
+
+    div{
+        height: 90%;
+        width: 90%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        right: -2%;
+        top: 2%;
+
+        div:nth-child(1){
+            height: 100%;
+            width: 60%;
+            padding: 20px;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: flex-start;
+
+            p{
+                font-weight: 300;
+            }
+            
+            p span{
+                font-weight: 500;
+            }
+
+            a{
+                cursor: pointer;
+                font-weight: 500;
+                align-self: center;
+                transition: all 0.3s;
+            }
+
+        }
+
+        div:nth-child(2){
+            height: 100%;
+            width: 40%;
+            
+            div{
+                height: 90%;
+                width: 90%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+}
+
+@mixin work-comment--mobile{
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    position: fixed;
+    top: 0px;
+    z-index: 10000;
+    background-color: $black-less-transparent;
+
+    div{
+        height: 100%;
+        width: 95%;
+        padding: 5px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 2%;
+
+        p{
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
+
+        a{
+            text-align: center;
+            font-size: larger;
+        }
+
+        .book-comment-pic--mobile{
+            height: 40%;
+            width: 90%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        #book-comment-pic-1--mobile{ background-image: url('../assets/entreloprofano.jpeg') ;}
+        #book-comment-pic-2--mobile{ background-image: url('../assets/ester.jpeg') ;}
+        #book-comment-pic-3--mobile{ background-image: url('../assets/palabrasdepaz.jpeg') ;}
+    }
+}
+
 @mixin link-animation-transition ($color){
     border-width: 0 0 1.5px 0;
     border-style: solid;
@@ -59,15 +169,20 @@ $dmsans: 'DM Sans', sans-serif;
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: $merri;
+    font-family: $merri-sans;
     font-weight: 300;
 }
+
+h2{ font-weight: 700; }
 
 h1{ font-size: 2rem; }
 h2{ font-size: 1.4rem; }
 h3{ font-size: 1.2rem; }
 h4{ font-size: 1.2rem; }
-h5{ font-size: 1.1rem; }
+h5{ 
+    font-size: 1.3rem;
+    font-weight: bolder;
+ }
 
 p {
     font-family: $frank;
@@ -104,7 +219,7 @@ header{
     align-items: center;
 
     a{
-        color: $dark-blue;
+        color: $light-blue;
         margin: 0 3px;
         transition: all 0.5s;
         i{
@@ -113,7 +228,7 @@ header{
     }
 
     a:hover{
-        color: $black;
+        color: $dark-blue;
     }
 }
 
@@ -271,14 +386,33 @@ section{
             }
         }
 
-        div:nth-child(1) div{ background-image: url('../assets/ester.jpeg'); }
-        div:nth-child(2) div{ background-image: url('../assets/entreloprofano.jpeg'); }
-        div:nth-child(3) div{ background-image: url('../assets/palabrasdepaz.jpeg'); }
-        
+        // Books pictures
+        #book-pic-1{ background-image: url('../assets/entreloprofano.jpeg'); }
+        #book-pic-2{ background-image: url('../assets/ester.jpeg'); }
+        #book-pic-3{ background-image: url('../assets/palabrasdepaz.jpeg'); }
+
+        .book-comment{
+            @include work-comment;
+        }
+
+        // Book pictures in book comments
+        #book-comment-1 div div.book-comment-pic div{
+            background-image: url('../assets/entreloprofano.jpeg');
+        }
+        #book-comment-2 div div.book-comment-pic div{
+            background-image: url('../assets/ester.jpeg');
+        }
+        #book-comment-3 div div.book-comment-pic div{
+            background-image: url('../assets/palabrasdepaz.jpeg');
+        }
     }
 
     .books-container--mobile{
         display: none
+    }
+
+    .book-comment--mobile{
+        @include work-comment--mobile;           
     }
 
     .articles-container{
@@ -348,11 +482,15 @@ footer{
                 padding: 10px 0px;
                 color: $black;
                 font-family: $dmsans;
-                
+                transition: all 0.5s;
             }
 
             h3{
                 font-weight: bolder;
+            }
+
+            p:hover, a:hover{
+                color: white;
             }
         }
     }
@@ -371,6 +509,7 @@ footer{
         p{
             font-family: $dmsans;
             font-weight: lighter;
+            margin: 0;
         }
 
         a{
@@ -508,7 +647,7 @@ footer{
 
         flex-flow: column nowrap;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: flex-end;
 
         a{
             font-size: 1.8rem;
@@ -520,7 +659,6 @@ footer{
             font-size: 2.3rem;
             display: inline-block;
             position: relative;
-            left: 80%;
         }
     }
 
@@ -593,7 +731,7 @@ footer{
                         right: 0px;
                         left: 0px;
                         bottom: 0px;
-                        background-color: rgba(37, 37, 37, 0.6);
+                        background-color: rgba(37, 37, 37, 0.8);
                         background-image: none !important;
                     }
                 }
@@ -610,18 +748,21 @@ footer{
 
             .carousel-inner{
                 div.carousel-item:nth-child(1){
-                    background-image: url('../assets/ester.jpeg');
+                    background-image: url('../assets/entreloprofano.jpeg');
                 }
             
                 div.carousel-item:nth-child(2){
-                    background-image: url('../assets/entreloprofano.jpeg');
+                    background-image: url('../assets/ester.jpeg');
                 }
     
                 div.carousel-item:nth-child(3){
                     background-image: url('../assets/palabrasdepaz.jpeg');
                 }
             }   
+
         }
+        
+        
 
         .articles-container--mobile{
             display: block;
